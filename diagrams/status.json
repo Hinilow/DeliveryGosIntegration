@@ -1,0 +1,142 @@
+{
+  "S01": {
+    "service": "api-gateway",
+    "team_id": "PLAT",
+    "stage": "Старый контур выведен",
+    "status": "В проде",
+    "debt": false
+  },
+  "S02": {
+    "service": "config-service",
+    "team_id": "PLAT",
+    "stage": "Старый контур выведен",
+    "status": "В проде",
+    "debt": false
+  },
+  "S03": {
+    "service": "audit-log",
+    "team_id": "PLAT",
+    "stage": "Прод в DropApp",
+    "status": "В проде",
+    "debt": false
+  },
+  "S04": {
+    "service": "observability-agent",
+    "team_id": "PLAT",
+    "stage": "Прод в DropApp",
+    "status": "В проде",
+    "debt": true
+  },
+  "S05": {
+    "service": "client-profile-sync",
+    "team_id": "ID",
+    "stage": "Контейнеризация",
+    "status": "В графике",
+    "debt": false
+  },
+  "S06": {
+    "service": "consent-registry",
+    "team_id": "ID",
+    "stage": "Прод в DropApp",
+    "status": "В проде",
+    "debt": true
+  },
+  "S07": {
+    "service": "esia-auth-adapter",
+    "team_id": "ID",
+    "stage": "Тест в DropApp",
+    "status": "В графике",
+    "debt": false
+  },
+  "S08": {
+    "service": "bio-template-store",
+    "team_id": "BIO",
+    "stage": "Не начата",
+    "status": "Под риском",
+    "debt": false
+  },
+  "S09": {
+    "service": "liveness-check",
+    "team_id": "BIO",
+    "stage": "Контейнеризация",
+    "status": "Под риском",
+    "debt": false
+  },
+  "S10": {
+    "service": "biometric-consent",
+    "team_id": "BIO",
+    "stage": "Тест в DropApp",
+    "status": "В графике",
+    "debt": false
+  },
+  "S11": {
+    "service": "ebs-gateway",
+    "team_id": "BIO",
+    "stage": "Анализ",
+    "status": "Под риском",
+    "debt": false
+  },
+  "S12": {
+    "service": "doc-render",
+    "team_id": "SIGN",
+    "stage": "Прод в DropApp",
+    "status": "В проде",
+    "debt": false
+  },
+  "S13": {
+    "service": "doc-archive",
+    "team_id": "SIGN",
+    "stage": "Анализ",
+    "status": "В графике",
+    "debt": false
+  },
+  "S14": {
+    "service": "sign-orchestrator",
+    "team_id": "SIGN",
+    "stage": "Тест в DropApp",
+    "status": "Под риском",
+    "debt": false
+  },
+  "S15": {
+    "service": "ukep-adapter",
+    "team_id": "SIGN",
+    "stage": "Контейнеризация",
+    "status": "Под риском",
+    "debt": false
+  },
+  "S16": {
+    "service": "request-status",
+    "team_id": "SMEV",
+    "stage": "Анализ",
+    "status": "Под риском",
+    "debt": false
+  },
+  "S17": {
+    "service": "smev-queue-router",
+    "team_id": "SMEV",
+    "stage": "Контейнеризация",
+    "status": "В графике",
+    "debt": false
+  },
+  "S18": {
+    "service": "smev-adapter",
+    "team_id": "SMEV",
+    "stage": "Контейнеризация",
+    "status": "Просрочено",
+    "debt": false
+  },
+  "S19": {
+    "service": "notification-hub",
+    "team_id": "NOTIFY",
+    "stage": "Прод в DropApp",
+    "status": "В проде",
+    "debt": true
+  },
+  "S20": {
+    "service": "gosuslugi-status-push",
+    "team_id": "NOTIFY",
+    "stage": "Тест в DropApp",
+    "status": "Под риском",
+    "debt": false
+  }
+}

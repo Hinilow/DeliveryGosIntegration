@@ -1,0 +1,357 @@
+{
+  "week": "W47 (16–20.11.2026)",
+  "report_date": "18.11.2026",
+  "deadline": "25.12.2026",
+  "n": 20,
+  "in_prod": 7,
+  "in_prod_prev": 5,
+  "progress": 0.5775,
+  "progress_prev": 0.4825,
+  "by_status": {
+    "В проде": 7,
+    "В графике": 5,
+    "Под риском": 7,
+    "Просрочено": 1
+  },
+  "risk_no_blocker": 2,
+  "rcod_ready": 5,
+  "teams": [
+    {
+      "team": "Платформа",
+      "pct": 0.95,
+      "in_prod": 4,
+      "services": 4
+    },
+    {
+      "team": "Идентификация",
+      "pct": 0.65,
+      "in_prod": 1,
+      "services": 3
+    },
+    {
+      "team": "Биометрия",
+      "pct": 0.3,
+      "in_prod": 0,
+      "services": 4
+    },
+    {
+      "team": "Подпись и документы",
+      "pct": 0.525,
+      "in_prod": 1,
+      "services": 4
+    },
+    {
+      "team": "СМЭВ-интеграции",
+      "pct": 0.3167,
+      "in_prod": 0,
+      "services": 3
+    },
+    {
+      "team": "Уведомления и статусы",
+      "pct": 0.775,
+      "in_prod": 1,
+      "services": 2
+    }
+  ],
+  "risks": [
+    {
+      "service": "smev-adapter",
+      "status": "Просрочено",
+      "plan": "13.11",
+      "signals": "план прошёл; блокер; 4 нед. на этапе",
+      "reason": "Нет сертификата СМЭВ для контура DropApp",
+      "escalation": "Руководитель кластера"
+    },
+    {
+      "service": "sign-orchestrator",
+      "status": "Под риском",
+      "plan": "20.11",
+      "signals": "зависимость не готова; 3 нед. на этапе",
+      "reason": "Без doc-archive и ukep-adapter сценарий подписания целиком не проверить",
+      "escalation": ""
+    },
+    {
+      "service": "gosuslugi-status-push",
+      "status": "Под риском",
+      "plan": "20.11",
+      "signals": "блокер; зависимость не готова; 3 нед. на этапе",
+      "reason": "Ожидает сетевой доступ к ЕПГУ (заявка ИБ)",
+      "escalation": "Руководитель кластера"
+    },
+    {
+      "service": "ebs-gateway",
+      "status": "Под риском",
+      "plan": "27.11",
+      "signals": "блокер; зависимость не готова; 4 нед. на этапе",
+      "reason": "Не согласованы требования ИБ к обработке биометрии в контейнерах",
+      "escalation": "Руководитель кластера"
+    },
+    {
+      "service": "ukep-adapter",
+      "status": "Под риском",
+      "plan": "04.12",
+      "signals": "блокер",
+      "reason": "Нужен доступ к HSM из контура DropApp",
+      "escalation": "Команда"
+    },
+    {
+      "service": "liveness-check",
+      "status": "Под риском",
+      "plan": "11.12",
+      "signals": "блокер; 3 нед. на этапе",
+      "reason": "Нужны GPU-узлы в DropApp",
+      "escalation": "Руководитель кластера"
+    },
+    {
+      "service": "request-status",
+      "status": "Под риском",
+      "plan": "11.12",
+      "signals": "3 нед. на этапе",
+      "reason": "Аналитик команды в отпуске до 23.11",
+      "escalation": ""
+    },
+    {
+      "service": "bio-template-store",
+      "status": "Под риском",
+      "plan": "18.12",
+      "signals": "блокер; 5 нед. на этапе",
+      "reason": "Нужна схема миграции stateful-хранилища",
+      "escalation": "Встреча РГ"
+    }
+  ],
+  "moved": [
+    {
+      "service": "client-profile-sync",
+      "prev": "Анализ",
+      "now": "Контейнеризация"
+    },
+    {
+      "service": "consent-registry",
+      "prev": "Тест в DropApp",
+      "now": "Прод в DropApp"
+    },
+    {
+      "service": "esia-auth-adapter",
+      "prev": "Контейнеризация",
+      "now": "Тест в DropApp"
+    },
+    {
+      "service": "biometric-consent",
+      "prev": "Контейнеризация",
+      "now": "Тест в DropApp"
+    },
+    {
+      "service": "doc-archive",
+      "prev": "Не начата",
+      "now": "Анализ"
+    },
+    {
+      "service": "ukep-adapter",
+      "prev": "Анализ",
+      "now": "Контейнеризация"
+    },
+    {
+      "service": "smev-queue-router",
+      "prev": "Анализ",
+      "now": "Контейнеризация"
+    },
+    {
+      "service": "notification-hub",
+      "prev": "Тест в DropApp",
+      "now": "Прод в DropApp"
+    }
+  ],
+  "conflicts": [
+    {
+      "service": "sign-orchestrator",
+      "plan": "2026-11-20",
+      "depends_on": "doc-archive",
+      "dep_plan": "2026-12-18"
+    },
+    {
+      "service": "sign-orchestrator",
+      "plan": "2026-11-20",
+      "depends_on": "ukep-adapter",
+      "dep_plan": "2026-12-04"
+    },
+    {
+      "service": "gosuslugi-status-push",
+      "plan": "2026-11-20",
+      "depends_on": "request-status",
+      "dep_plan": "2026-12-11"
+    },
+    {
+      "service": "ebs-gateway",
+      "plan": "2026-11-27",
+      "depends_on": "bio-template-store",
+      "dep_plan": "2026-12-18"
+    }
+  ],
+  "decisions": [
+    "smev-adapter: новый план 04.12, если сертификат СМЭВ будет до 27.11. smev-queue-router зависит от него и стоял на тот же день, поэтому его план сдвигаем на 11.12.",
+    "ebs-gateway: требования ИБ к биометрии в контейнерах согласуем на отдельной встрече 20.11. Если не договоримся, вопрос уходит руководителю кластера.",
+    "gosuslugi-status-push: сетевой доступ к ЕПГУ ждём с 02.11, эскалируем руководителю кластера.",
+    "sign-orchestrator: 20.11 в прод не выходит, doc-archive и ukep-adapter не готовы. До 25.11 команда Подписи выбирает межконтурный доступ на переходный период или перенос на 18.12.",
+    "consent-registry: в проде с 13.11, но учения РЦОД не пройдены. Повтор 27.11 после исправлений из разбора.",
+    "audit-log и observability-agent: к 02.12 нужен план вывода старого контура."
+  ],
+  "actions": [
+    {
+      "service": "smev-adapter",
+      "action": "Получить сертификат СМЭВ для контура DropApp и передать команде",
+      "owner": "Руководитель группы СМЭВ",
+      "due": "27.11"
+    },
+    {
+      "service": "ebs-gateway",
+      "action": "Провести встречу с ИБ и зафиксировать требования к обработке биометрии в контейнерах",
+      "owner": "Delivery Lead",
+      "due": "20.11"
+    },
+    {
+      "service": "gosuslugi-status-push",
+      "action": "Эскалировать заявку на сетевой доступ к ЕПГУ руководителю кластера",
+      "owner": "Delivery Lead",
+      "due": "19.11"
+    },
+    {
+      "service": "consent-registry",
+      "action": "Разобрать неуспешные учения РЦОД и повторить переключение",
+      "owner": "Руководитель группы Идентификации",
+      "due": "27.11"
+    },
+    {
+      "service": "liveness-check",
+      "action": "Получить от платформы DropApp срок выделения GPU-узлов",
+      "owner": "Delivery Lead",
+      "due": "25.11"
+    },
+    {
+      "service": "bio-template-store",
+      "action": "Подготовить схему миграции stateful-хранилища и согласовать с архитектором",
+      "owner": "Руководитель группы Биометрии",
+      "due": "02.12"
+    },
+    {
+      "service": "sign-orchestrator",
+      "action": "Выбрать: межконтурный доступ на переходный период или перенос на 18.12",
+      "owner": "Руководитель группы Подписи",
+      "due": "25.11"
+    },
+    {
+      "service": "smev-queue-router",
+      "action": "Перенести план на 11.12 в трекере и Jira",
+      "owner": "Delivery Lead",
+      "due": "19.11"
+    },
+    {
+      "service": "audit-log",
+      "action": "Согласовать план вывода старого контура, вместе с observability-agent",
+      "owner": "Руководитель группы Платформы",
+      "due": "02.12"
+    }
+  ],
+  "history": {
+    "weeks": [
+      "W43",
+      "W44",
+      "W45",
+      "W46",
+      "W47"
+    ],
+    "dates": [
+      "21.10",
+      "28.10",
+      "04.11",
+      "11.11",
+      "18.11"
+    ],
+    "ready": [
+      0.285,
+      0.4075,
+      0.47,
+      0.4825,
+      0.5775
+    ],
+    "prod": [
+      3,
+      4,
+      4,
+      5,
+      7
+    ]
+  },
+  "forecast": {
+    "tempo_pp": 0.0567,
+    "tempo_cnt": 1.0,
+    "ready": "28.12",
+    "ready_real": "12.01",
+    "count": "17.02",
+    "count_real": "17.02",
+    "last_window": "18.12",
+    "moratorium": "21.12–11.01"
+  },
+  "wave1": [
+    "client-profile-sync",
+    "esia-auth-adapter",
+    "biometric-consent",
+    "doc-archive"
+  ],
+  "wave2": [
+    "bio-template-store",
+    "liveness-check",
+    "ebs-gateway",
+    "sign-orchestrator",
+    "ukep-adapter",
+    "request-status",
+    "smev-queue-router",
+    "smev-adapter",
+    "gosuslugi-status-push"
+  ],
+  "help": [
+    {
+      "service": "ebs-gateway",
+      "days": 16,
+      "need": "позиция ИБ по обработке биометрии в контейнерах, если 20.11 не договоримся сами"
+    },
+    {
+      "service": "smev-adapter",
+      "days": 14,
+      "need": "ускорить выпуск сертификата СМЭВ для нового контура"
+    },
+    {
+      "service": "gosuslugi-status-push",
+      "days": 13,
+      "need": "согласование заявки на сетевой доступ к ЕПГУ у ИБ"
+    },
+    {
+      "service": "liveness-check",
+      "days": 12,
+      "need": "срок, к которому платформа DropApp выделит GPU-узлы"
+    }
+  ],
+  "prod_debts": [
+    {
+      "service": "observability-agent",
+      "debts": "runbook и план отката, РЦОД не готов"
+    },
+    {
+      "service": "consent-registry",
+      "debts": "учения РЦОД не пройдены"
+    },
+    {
+      "service": "notification-hub",
+      "debts": "приёмка сопровождением"
+    }
+  ],
+  "tail": [
+    {
+      "service": "audit-log",
+      "weeks": 4
+    },
+    {
+      "service": "observability-agent",
+      "weeks": 3
+    }
+  ]
+}
